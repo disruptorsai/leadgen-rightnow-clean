@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Right Now Heating & Air | Boise HVAC, Plumbing & Electrical</title>
+    <meta name="description" content="Right Now Heating & Air — Expert HVAC, plumbing and electrical services in Boise and the Treasure Valley. Call (208) 939-4475.">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            color: #1a1a1a;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ── Nav ── */
+        .nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .nav-logo {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.4rem;
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+
+        .nav-logo span { color: #c41e3a; }
+
+        .nav-phone {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #1a1a1a;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .nav-phone:hover { color: #c41e3a; }
+
+        /* ── Hero ── */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 8rem 2rem 4rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-eyebrow {
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #c41e3a;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(2.5rem, 5.5vw, 4rem);
+            line-height: 1.15;
+            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.25rem);
+            color: #555;
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+        }
+
+        .btn-primary {
+            background: #c41e3a;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #a01830;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #1a1a1a;
+            border: 2px solid #1a1a1a;
+        }
+
+        .btn-outline:hover {
+            background: #1a1a1a;
+            color: white;
+        }
+
+        /* ── Divider ── */
+        .divider {
+            width: 60px;
+            height: 3px;
+            background: #c41e3a;
+            margin: 0 auto;
+        }
+
+        /* ── Services ── */
+        .services {
+            padding: 6rem 2rem;
+            background: #fafafa;
+        }
+
+        .services-inner {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .services h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            text-align: center;
+            margin-bottom: 0.75rem;
+        }
+
+        .services-sub {
+            text-align: center;
+            color: #777;
+            margin-bottom: 3rem;
+        }
+
+        .services-list {
+            display: grid;
+            gap: 0;
+        }
+
+        .service-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 0;
+            border-bottom: 1px solid #e0e0e0;
+            text-decoration: none;
+            color: #1a1a1a;
+            transition: all 0.2s;
+        }
+
+        .service-item:hover {
+            padding-left: 1rem;
+            color: #c41e3a;
+        }
+
+        .service-item:last-child { border-bottom: none; }
+
+        .service-name {
+            font-size: 1.15rem;
+            font-weight: 500;
+        }
+
+        .service-arrow {
+            font-size: 1.2rem;
+            opacity: 0.3;
+            transition: all 0.2s;
+        }
+
+        .service-item:hover .service-arrow {
+            opacity: 1;
+            transform: translateX(4px);
+        }
+
+        /* ── About ── */
+        .about {
+            padding: 6rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1.25rem;
+        }
+
+        /* ── Reviews ── */
+        .reviews {
+            padding: 6rem 2rem;
+            background: #1a1a1a;
+            color: white;
+        }
+
+        .reviews-inner {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .reviews h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            margin-bottom: 2rem;
+        }
+
+        .review-stars {
+            font-size: 1.5rem;
+            color: #f59e0b;
+            margin-bottom: 1.5rem;
+        }
+
+        .review-text {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.85);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+
+        .review-author {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
+        }
+
+        /* ── CTA ── */
+        .cta {
+            padding: 6rem 2rem;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .cta p {
+            color: #777;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-phone {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2rem;
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+
+        .cta-phone:hover { color: #c41e3a; }
+
+        /* ── Footer ── */
+        .footer {
+            padding: 3rem 2rem;
+            border-top: 1px solid #e0e0e0;
+            text-align: center;
+            color: #999;
+            font-size: 0.85rem;
+        }
+
+        .footer a {
+            color: #999;
+            text-decoration: none;
+        }
+
+        .footer a:hover { color: #1a1a1a; }
+
+        /* ── Responsive ── */
+        @media (max-width: 600px) {
+            .hero { padding: 6rem 1.5rem 3rem; }
+            .services, .about, .reviews, .cta { padding: 4rem 1.5rem; }
+            .hero-actions { flex-direction: column; }
+            .btn { justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <a href="#" class="nav-logo">Right Now<span>.</span></a>
+        <a href="tel:+12089394475" class="nav-phone">📞 (208) 939-4475</a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-eyebrow">Boise & Treasure Valley</div>
+        <h1>Expert Heating, Cooling, Plumbing & Electrical</h1>
+        <p>Fast, reliable service at a fair price. We handle everything from permits to cleanup — so you don't have to worry about a thing.</p>
+        <div class="hero-actions">
+            <a href="tel:+12089394475" class="btn btn-primary">📞 Call Now</a>
+            <a href="#services" class="btn btn-outline">Our Services →</a>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="services-inner">
+            <h2>What We Do</h2>
+            <p class="services-sub">Full-service home comfort solutions</p>
+            <div class="services-list">
+                <a href="tel:+12089394475" class="service-item">
+                    <span class="service-name">Air Conditioning</span>
+                    <span class="service-arrow">→</span>
+                </a>
+                <a href="tel:+12089394475" class="service-item">
+                    <span class="service-name">Heating</span>
+                    <span class="service-arrow">→</span>
+                </a>
+                <a href="tel:+12089394475" class="service-item">
+                    <span class="service-name">Plumbing & Drains</span>
+                    <span class="service-arrow">→</span>
+                </a>
+                <a href="tel:+12089394475" class="service-item">
+                    <span class="service-name">Electrical</span>
+                    <span class="service-arrow">→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>Built on Grit. Bound by Pride.</h2>
+        <p>Since 2001, we've been serving Idaho with a simple belief: hard work, integrity, and showing up for people still matter.</p>
+        <p>We understand that dealing with HVAC issues can be stressful, which is why we handle everything for you — from obtaining necessary permits to finding the best solutions for your heating and cooling needs. Plus, we always leave your home clean and comfortable, so you won't even notice we were there.</p>
+        <p>Our goal is to provide fast, reliable service at a fair price point, so you can enjoy a comfortable home with your family. Trust us to get the job done right.</p>
+    </section>
+
+    <section class="reviews">
+        <div class="reviews-inner">
+            <h2>What Our Customers Say</h2>
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"Dustin was awesome! Very polite and informative, explained everything to us and was able to find/fix the problem quickly! The name of the company suits them well, he was here in about an hour and got our a/c up and running in this summer heat!"</p>
+            <p class="review-author">— Logan Ayee, verified Google review</p>
+        </div>
+    </section>
+
+    <section id="contact" class="cta">
+        <h2>Ready?</h2>
+        <p>Call us today. No obligation, no pressure.</p>
+        <a href="tel:+12089394475" class="cta-phone">(208) 939-4475</a>
+    </section>
+
+    <footer class="footer">
+        <p>© 2024 Right Now Heating & Air · Serving Boise & Treasure Valley</p>
+        <p style="margin-top:0.5rem"><a href="https://disruptorsmedia.com">Disruptors Media</a></p>
+    </footer>
+
+</body>
+</html>
